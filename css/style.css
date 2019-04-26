@@ -1,0 +1,10 @@
+@import "./reset.css";
+
+body {
+   background-color: #f6f6f6;
+}
+
+div.card-container {
+   padding: 26px;
+   background-color: green;
+}

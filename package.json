@@ -1,0 +1,14 @@
+{
+   "name": "mindera-card-slider",
+   "version": "1.0.0",
+   "description": "A component for displaying HTML content using the Card design pattern",
+   "main": "index.js",
+   "scripts": {
+      "test": "jest"
+   },
+   "author": "asakasamo",
+   "license": "ISC",
+   "devDependencies": {
+      "jest": "^24.7.1"
+   }
+}
