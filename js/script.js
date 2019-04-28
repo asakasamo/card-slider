@@ -29,25 +29,30 @@ document.querySelector("#slider").appendChild(slider);
 
 const numVisibleCards = 4;
 const parentSelector = "#slider";
-const cardsDataUrl = "http://localhost:3000/cards";
 let numTotalCards = 20;
-const cardElements = [];
-let cardWidthPx = 308;
-let cardSpacingPx = 26;
+const cardsDataUrl = "http://localhost:3000/cards";
+let cardWidthValue = 308;
+let cardWidthUnits = "px";
+let cardSpacingValue = 26;
+let cardSpacingUnits = "px";
 
 ///
 
-//set the css variables
-const root = document.documentElement;
-root.style.setProperty("--num-visible-cards", numVisibleCards);
-root.style.setProperty("--card-width", `${cardWidthPx}px`);
-root.style.setProperty("--card-spacing", `${cardSpacingPx}px`);
-
 let slider;
 let cardsContainer;
+const cardElements = [];
 
 CardHelper.fetchCardsData(numTotalCards, 1, cardsDataUrl).then((cardsData) => {
    numTotalCards = cardsData.length;
+
+   //set the css variables
+   const root = document.documentElement;
+   root.style.setProperty("--num-visible-cards", numVisibleCards);
+   root.style.setProperty("--card-width", `${cardWidthValue}${cardWidthUnits}`);
+   root.style.setProperty(
+      "--card-spacing",
+      `${cardSpacingValue}${cardSpacingUnits}`
+   );
    root.style.setProperty("--num-total-cards", numTotalCards);
 
    slider = CardSlider.generateCardSlider();
@@ -83,7 +88,8 @@ CardHelper.fetchCardsData(numTotalCards, 1, cardsDataUrl).then((cardsData) => {
    });
 
    function updateSliderPosition() {
-      const xOffset = cardElements[sliderIndex].offsetLeft - cardSpacingPx / 2;
+      const xOffset =
+         cardElements[sliderIndex].offsetLeft - cardsContainer.offsetLeft;
       cardsContainer.style.transform = `translateX(-${xOffset}px)`;
    }
 
