@@ -4,4 +4,3 @@ The width of the cards holder calculates to a value SLIGHTLY too small for the v
 Sometimes the very first click of the nav slides the cards SLIGHTLY too far left. I still have 
    no idea why it's doing that.
 
-Major refactor: Move the CSS variables into the slider itself

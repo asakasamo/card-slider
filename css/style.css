@@ -34,7 +34,6 @@ a {
 /* Top level cards wrapper */
 
 .card-slider {
-   /* background-color: gray; */
    padding: calc(var(--card-spacing) / 2);
    overflow: hidden;
    width: var(--cards-wrapper-width);
@@ -43,22 +42,17 @@ a {
 /* Direct container for the cards */
 
 .cards {
-   /* background-color: red; */
    width: calc(
       var(--num-total-cards) * var(--card-width) +
          ((var(--num-total-cards) - 1) * var(--card-spacing))
    );
    display: flex;
-   /* justify-content: space-between; */
-   transition: 0.4s ease-in-out;
-
-   /* transform: translateX(-100px); */
+   transition: 0.4s ease-out;
 }
 
 /* Individual card styles (top level) */
 
 .card {
-   /* background-color: dodgerblue; */
    margin: calc(var(--card-spacing) / 2);
    flex-basis: var(--card-width);
    display: flex;
@@ -69,9 +63,7 @@ a {
 }
 
 .card-image {
-   /* background-color: goldenrod; */
    height: calc(var(--grid-height) * 7);
-   /* background-image: image_url */
    background-image: url(http://lorempixel.com/300/150/);
    background-size: 100% auto;
 }
@@ -87,7 +79,6 @@ a {
 /* Individual card styles (inner content) */
 
 .card-header {
-   /* min-height: calc(var(--grid-height) * 4); */
    padding-top: var(--grid-height);
    padding-bottom: var(--grid-height);
    display: flex;
@@ -101,7 +92,6 @@ a {
 
 .card-header-text {
    padding-left: var(--grid-height);
-   /* height: calc(var(--grid-height) * 2); */
    display: flex;
    flex-direction: column;
    justify-content: space-between;
@@ -148,7 +138,6 @@ a {
 }
 
 .card-nav {
-   /* background-color: blue; */
    flex-basis: 40px;
    display: flex;
    justify-content: space-between;

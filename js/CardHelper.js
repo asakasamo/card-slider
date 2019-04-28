@@ -1,4 +1,8 @@
-const placeholder = {
+/**
+ * CardsHelper.js - Helper functions for cards and card-related data
+ */
+
+const placeholderCardData = {
    title: "The Card Title",
    subtitle: "What will you find here",
    body:
@@ -31,11 +35,11 @@ class CardHelper {
 
       cardsData.map((cardData) => {
          let card = {
-            title: cardData.title || placeholder.title,
-            subtitle: cardData.subtitle || placeholder.subtitle,
-            body: cardData.text || placeholder.body,
-            imageUrl: cardData.image_url || placeholder.imageUrl,
-            avatarUrl: cardData.avatar_url || placeholder.avatarUrl
+            title: cardData.title || placeholderCardData.title,
+            subtitle: cardData.subtitle || placeholderCardData.subtitle,
+            body: cardData.text || placeholderCardData.body,
+            imageUrl: cardData.image_url || placeholderCardData.imageUrl,
+            avatarUrl: cardData.avatar_url || placeholderCardData.avatarUrl
          };
 
          cards.push(card);
@@ -61,7 +65,7 @@ class CardHelper {
       const cardImage = document.createElement("div");
       cardImage.classList.add("card-image");
       cardImage.style.backgroundImage = `url("${cardData.imageUrl ||
-         placeholder.imageUrl}")`;
+         placeholderCardData.imageUrl}")`;
 
       const cardContents = document.createElement("div");
       cardContents.classList.add("card-contents");
@@ -75,30 +79,31 @@ class CardHelper {
       const cardAvatar = document.createElement("img");
       cardAvatar.classList.add("card-avatar");
       cardAvatar.alt = "Avatar";
-      cardAvatar.src = cardData.avatarUrl || placeholder.avatarUrl;
+      cardAvatar.src = cardData.avatarUrl || placeholderCardData.avatarUrl;
 
       const cardHeaderText = document.createElement("div");
       cardHeaderText.classList.add("card-header-text");
 
       const cardTitle = document.createElement("h1");
       cardTitle.classList.add("card-title");
-      cardTitle.innerHTML = cardData.title || placeholder.title;
+      cardTitle.innerHTML = cardData.title || placeholderCardData.title;
 
       const cardSubtitle = document.createElement("h2");
       cardSubtitle.classList.add("card-subtitle");
-      cardSubtitle.innerHTML = cardData.subtitle || placeholder.subtitle;
+      cardSubtitle.innerHTML =
+         cardData.subtitle || placeholderCardData.subtitle;
 
       const cardBody = document.createElement("div");
       cardBody.classList.add("card-body");
-      cardBody.innerHTML = cardData.body || placeholder.body;
+      cardBody.innerHTML = cardData.body || placeholderCardData.body;
 
       const cardFooter = document.createElement("div");
       cardFooter.classList.add("card-footer");
 
       const cardLink = document.createElement("a");
       cardLink.classList.add("card-link");
-      cardLink.innerHTML = cardData.linkText || placeholder.linkText;
-      cardLink.href = cardData.linkUrl || placeholder.linkUrl;
+      cardLink.innerHTML = cardData.linkText || placeholderCardData.linkText;
+      cardLink.href = cardData.linkUrl || placeholderCardData.linkUrl;
 
       // Nest the DOM elements in the right order
 
