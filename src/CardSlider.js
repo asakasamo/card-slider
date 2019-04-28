@@ -2,8 +2,57 @@
  * CardSlider.js - The main controller class for a CardSlider. All initialization is self-contained;
  * just pass in the options and the constructor will do the rest.
  *
- * See CardSlider.constructor for details on the options.
+ * See CardSlider.constructor or the readme for details on the options.
  */
+
+/*
+   -- Sample HTML for a complete card slider with 1 card --
+      
+      <div class="card-slider">
+         <div class="cards">
+            <div class="card">
+               <div class="card-image"></div>
+
+               <div class="card-contents">
+                  <div class="card-header">
+                     <div class="card-avatar-container">
+                        <img
+                           src="./images/avatar.png"
+                           alt="Avatar"
+                           class="card-avatar"
+                        />
+                     </div>
+
+                     <div class="card-header-text">
+                        <h1 class="card-title">We are Humans</h1>
+                        <h2 class="card-subtitle">
+                           What will you find here
+                        </h2>
+                     </div>
+                  </div>
+
+                  <div class="card-body">
+                     We act like humans, we talk like humans, and we think like
+                     humans. And we call out anyone who does the opposite.
+                  </div>
+
+                  <div class="card-footer">
+                     <a href="#" class="card-link">
+                        Learn More
+                     </a>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+         <div class="card-nav-container">
+            <div class="card-nav">
+               <a href="#" class="slider-nav-left"><</a>
+               <a href="#" class="slider-nav-right">></a>
+            </div>
+         </div>
+      </div>
+*/
 
 import CardHelper from "./CardHelper.js";
 
