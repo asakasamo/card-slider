@@ -81,7 +81,9 @@ a {
 /* Individual card styles (inner content) */
 
 .card-header {
-   height: calc(var(--grid-height) * 4);
+   /* min-height: calc(var(--grid-height) * 4); */
+   padding-top: var(--grid-height);
+   padding-bottom: var(--grid-height);
    display: flex;
    align-items: center;
 }
@@ -93,7 +95,7 @@ a {
 
 .card-header-text {
    padding-left: var(--grid-height);
-   height: calc(var(--grid-height) * 2);
+   /* height: calc(var(--grid-height) * 2); */
    display: flex;
    flex-direction: column;
    justify-content: space-between;
