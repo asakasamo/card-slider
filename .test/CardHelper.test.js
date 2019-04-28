@@ -1,11 +1,11 @@
-import CardFetcher from "../js/CardFetcher";
+import CardHelper from "../js/CardHelper";
 
 describe("Test the functions that fetch cards from the server", () => {
    const subtitle = "What will you find here";
    const avatarUrl = "http://lorempixel.com/g/50/50/food/";
 
    test("Should fetch the first card from the database", async () => {
-      const cards = await CardFetcher.fetchCards(1);
+      const cards = await CardHelper.fetchCardsData(1);
       const firstCard = cards[0];
 
       const expected = {
@@ -17,11 +17,11 @@ describe("Test the functions that fetch cards from the server", () => {
          avatarUrl
       };
 
-      expect(firstCard).toEqual(expected);
+      expect(firstCard).toEqual(expect.objectContaining(expected));
    });
 
    test("Should fetch the first three cards from the database", async () => {
-      const firstThreeCards = await CardFetcher.fetchCards(3);
+      const firstThreeCards = await CardHelper.fetchCardsData(3);
 
       const expected = [
          {
@@ -50,11 +50,11 @@ describe("Test the functions that fetch cards from the server", () => {
          }
       ];
 
-      expect(firstThreeCards).toEqual(expected);
+      expect(firstThreeCards).toEqual(expect.objectContaining(expected));
    });
 
    test("Should fetch cards 7, 8, and 9 (3 cards from the 3rd page, with 3 cards per page)", async () => {
-      const cardsFromPage3 = await CardFetcher.fetchCards(3, 3);
+      const cardsFromPage3 = await CardHelper.fetchCardsData(3, 3);
 
       const expected = [
          {
@@ -83,6 +83,35 @@ describe("Test the functions that fetch cards from the server", () => {
          }
       ];
 
-      expect(cardsFromPage3).toEqual(expected);
+      expect(cardsFromPage3).toEqual(expect.objectContaining(expected));
    });
+});
+
+test("Should create a properly nested DOM element for a given set of card data", () => {
+   const cardData = {
+      title: "Is this the Real Life?",
+      subtitle: "Is this just Fantasy?",
+      body:
+         "Caught in a landslide, no escape from reality... Open your eyes, look up to the skies and seeeeeeeeeeee!...",
+      imageUrl: "http://lorempixel.com/400/200/nature",
+      avatarUrl: "http://lorempixel.com/50/50/cats"
+   };
+
+   // Removes the wrapping "url()" from a css url string
+   function stripUrlFromUrlString(urlString) {
+      return urlString.substring(4, urlString.length - 1);
+   }
+
+   const cardElement = CardHelper.generateCardElement(cardData);
+   const cardElementContent = {
+      title: cardElement.querySelector(".card-title").textContent,
+      subtitle: cardElement.querySelector(".card-subtitle").textContent,
+      body: cardElement.querySelector(".card-body").textContent,
+      imageUrl: stripUrlFromUrlString(
+         cardElement.querySelector(".card-image").style.backgroundImage
+      ),
+      avatarUrl: cardElement.querySelector(".card-avatar").src
+   };
+
+   expect(cardElementContent).toEqual(expect.objectContaining(cardData));
 });
