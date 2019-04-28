@@ -9,7 +9,7 @@ const placeholder = {
    linkText: "Learn More"
 };
 
-const serverUrl = "http://localhost:3000";
+const dummyCardsDataUrl = "http://localhost:3000/cards";
 
 class CardHelper {
    /**
@@ -18,9 +18,13 @@ class CardHelper {
     * @param {number} page Which page to get the card entries from
     * @returns {object[]}
     */
-   static async fetchCardsData(count = 10, page = 1) {
+   static async fetchCardsData(
+      count = 20,
+      page = 1,
+      cardsDataUrl = dummyCardsDataUrl
+   ) {
       const serverResponse = await fetch(
-         `${serverUrl}/cards?_page=${page}&_limit=${count}`
+         `${cardsDataUrl}?_page=${page}&_limit=${count}`
       );
       const cardsData = await serverResponse.json();
       const cards = [];
