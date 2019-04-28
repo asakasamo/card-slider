@@ -59,6 +59,7 @@ class CardSlider {
       this.cardWidthUnits = options.cardWidthUnits || "px";
       this.cardSpacingValue = options.cardSpacingValue || 26;
       this.cardSpacingUnits = options.cardSpacingUnits || "px";
+      this.ready = false;
    }
 
    /**
@@ -176,6 +177,11 @@ class CardSlider {
     */
    _handleLeftNav(event) {
       event.preventDefault();
+      if (!this.ready) {
+         return;
+      }
+      this.ready = false;
+
       this.sliderIndex--;
       if (this.sliderIndex < 0) {
          this.sliderIndex = this.numTotalCards - this.numVisibleCards + 1;
@@ -189,6 +195,11 @@ class CardSlider {
     */
    _handleRightNav(event) {
       event.preventDefault();
+      if (!this.ready) {
+         return;
+      }
+      this.ready = false;
+
       this.sliderIndex++;
       if (this.sliderIndex > this.numTotalCards - this.numVisibleCards + 1) {
          this.sliderIndex = 0;
@@ -205,6 +216,9 @@ class CardSlider {
          this.cardsElement.offsetLeft;
 
       this.cardsElement.style.transform = `translateX(-${xOffset}px)`;
+      this.cardsElement.addEventListener("transitionend", () => {
+         this.ready = true;
+      });
    }
 
    /**
@@ -213,6 +227,7 @@ class CardSlider {
    _spawn() {
       const parentElement = document.querySelector(this.parentSelector);
       parentElement.appendChild(this.sliderElement);
+      this.ready = true;
    }
 }
 
