@@ -82,22 +82,22 @@ class CardHelper {
 
       const cardTitle = document.createElement("h1");
       cardTitle.classList.add("card-title");
-      cardTitle.textContent = cardData.title || placeholder.title;
+      cardTitle.innerHTML = cardData.title || placeholder.title;
 
       const cardSubtitle = document.createElement("h2");
       cardSubtitle.classList.add("card-subtitle");
-      cardSubtitle.textContent = cardData.subtitle || placeholder.subtitle;
+      cardSubtitle.innerHTML = cardData.subtitle || placeholder.subtitle;
 
       const cardBody = document.createElement("div");
       cardBody.classList.add("card-body");
-      cardBody.textContent = cardData.body || placeholder.body;
+      cardBody.innerHTML = cardData.body || placeholder.body;
 
       const cardFooter = document.createElement("div");
       cardFooter.classList.add("card-footer");
 
       const cardLink = document.createElement("a");
       cardLink.classList.add("card-link");
-      cardLink.textContent = cardData.linkText || placeholder.linkText;
+      cardLink.innerHTML = cardData.linkText || placeholder.linkText;
       cardLink.href = cardData.linkUrl || placeholder.linkUrl;
 
       // Nest the DOM elements in the right order
