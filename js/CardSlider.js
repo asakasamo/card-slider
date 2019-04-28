@@ -23,7 +23,7 @@ class CardSlider {
     * Constructs a CardSlider and appends it to the provided slement, specified by the options.
     * The available options and their defaults are are:
     * {
-    *    numVisibleCards: 4,
+    *    numVisibleCards: 3,
     *    parentSelector: "body",
     *    numTotalCards: 20,
     *    cardsDataUrl: "http://localhost:3000/cards",
@@ -51,14 +51,21 @@ class CardSlider {
     * @param {object} options
     */
    _initProperties(options = {}) {
-      this.numVisibleCards = options.numVisibleCards || 4;
-      this.parentSelector = options.parentSelector || "body";
-      this.numTotalCards = options.numTotalCards || 20;
-      this.cardsDataUrl = options.cardsDataUrl || "http://localhost:3000/cards";
-      this.cardWidthValue = options.cardWidthValue || 308;
-      this.cardWidthUnits = options.cardWidthUnits || "px";
-      this.cardSpacingValue = options.cardSpacingValue || 26;
-      this.cardSpacingUnits = options.cardSpacingUnits || "px";
+      this.numVisibleCards =
+         options.numVisibleCards || defaultOptions.numVisibleCards;
+      this.parentSelector =
+         options.parentSelector || defaultOptions.parentSelector;
+      this.numTotalCards =
+         options.numTotalCards || defaultOptions.numTotalCards;
+      this.cardsDataUrl = options.cardsDataUrl || defaultOptions.cardsDataUrl;
+      this.cardWidthValue =
+         options.cardWidthValue || defaultOptions.cardWidthValue;
+      this.cardWidthUnits =
+         options.cardWidthUnits || defaultOptions.cardWidthUnits;
+      this.cardSpacingValue =
+         options.cardSpacingValue || defaultOptions.cardSpacingValue;
+      this.cardSpacingUnits =
+         options.cardSpacingUnits || defaultOptions.cardSpacingUnits;
       this.ready = false;
    }
 
@@ -118,20 +125,20 @@ class CardSlider {
     */
    _setCSSVariables() {
       this.sliderElement.style.setProperty(
-         "--num-visible-cards",
-         this.numVisibleCards
-      );
-      this.sliderElement.style.setProperty(
          "--card-width",
          `${this.cardWidthValue}${this.cardWidthUnits}`
       );
       this.sliderElement.style.setProperty(
-         "--card-spacing",
-         `${this.cardSpacingValue}${this.cardSpacingUnits}`
+         "--num-visible-cards",
+         this.numVisibleCards
       );
       this.sliderElement.style.setProperty(
          "--num-total-cards",
          this.numTotalCards
+      );
+      this.sliderElement.style.setProperty(
+         "--card-spacing",
+         `${this.cardSpacingValue}${this.cardSpacingUnits}`
       );
    }
 
