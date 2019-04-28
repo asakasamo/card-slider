@@ -1,10 +1,5 @@
 @import "./reset.css";
 
-/* Variables */
-
-:root {
-}
-
 /* Global styles */
 
 body {
@@ -17,6 +12,7 @@ main {
 
 a {
    text-decoration: none;
+   transition: 0.2s all;
 }
 
 /* Top level cards wrapper */
@@ -118,7 +114,6 @@ a {
 
 .card-footer {
    font-size: 16px;
-   color: #2da936;
    font-weight: bold;
    flex: 1;
    display: flex;
@@ -126,8 +121,15 @@ a {
 
 .card-footer a,
 .card-footer a:visited {
-   color: inherit;
+   color: #2da936;
    align-self: flex-end;
+}
+
+.card-footer a:hover {
+   color: orange;
+}
+.card-footer a:active {
+   color: #2da936;
 }
 
 /* Navigation (slider toggles) */
@@ -147,5 +149,14 @@ a {
 .card-nav a,
 .card-nav a:visited {
    color: #299638;
-   font-weight: bold;
+   font-weight: bolder;
+   font-family: "Courier New", sans-serif;
+}
+
+.card-nav a:hover {
+   color: orange;
+}
+
+.card-nav a:active {
+   color: #299638;
 }

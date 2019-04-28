@@ -11,7 +11,7 @@ import { CardSlider } from "./CardSlider.js";
 
 // create a CardSlider with provided options
 const options = {
-   numVisibleCards: 2,
+   numVisibleCards: 3,
    parentSelector: "#slider"
 };
 const slider2 = new CardSlider(options);
