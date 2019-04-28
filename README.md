@@ -1,4 +1,4 @@
-## Card Slider, by Al-John Sakasamo
+# Card Slider, by Al-John Sakasamo
 A component for displaying HTML content using the Card design pattern
 
 ## How to run the demo
