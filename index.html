@@ -11,11 +11,20 @@
          sizes="32x32"
       />
       <link rel="stylesheet" href="./css/style.css" />
-      <script type="module" src="js/slider.js"></script>
-
+      <script src="js/slider.js"></script>
       <title>Mindera Card Slider</title>
    </head>
    <body>
-      <div id="slider"></div>
+      <h1 class="title">Here's one card slider...</h1>
+      <div id="slider1"></div>
+
+      <h1 class="title">...and here's another!</h1>
+      <div id="slider2"></div>
+      <script>
+         $cardSlider({ parentSelector: "#slider1 " });
+
+         const options = { numVisibleCards: 1, parentSelector: "#slider2" };
+         $cardSlider(options);
+      </script>
    </body>
 </html>

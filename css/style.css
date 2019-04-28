@@ -10,8 +10,7 @@ h2 {
    margin: 0;
    padding: 0;
    border: 0;
-   font-size: 100%;
-   font: inherit;
+   font-family: Arial;
    vertical-align: baseline;
 }
 
@@ -172,4 +171,13 @@ a {
 
 .card-nav a:active {
    color: #299638;
+}
+
+/* Extra styles */
+
+h1.title {
+   color: #888;
+   border-bottom: 1px solid #ddd;
+   padding-left: 10px;
+   margin: 10px;
 }
