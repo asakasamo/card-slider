@@ -27,7 +27,7 @@ const slider = CardSlider.generateCardSlider();
 document.querySelector("#slider").appendChild(slider);
 */
 
-const numVisibleCards = 1;
+const numVisibleCards = 4;
 const parentSelector = "#slider";
 const cardsDataUrl = "http://localhost:3000/cards";
 let numTotalCards = 20;
@@ -76,14 +76,14 @@ CardHelper.fetchCardsData(numTotalCards, 1, cardsDataUrl).then((cardsData) => {
 
    navRight.addEventListener("click", () => {
       sliderIndex++;
-      if (sliderIndex >= numTotalCards) {
+      if (sliderIndex > numTotalCards - numVisibleCards) {
          sliderIndex = 0;
       }
       updateSliderPosition();
    });
 
    function updateSliderPosition() {
-      const xOffset = sliderIndex * cardWidthPx + sliderIndex * cardSpacingPx;
+      const xOffset = cardElements[sliderIndex].offsetLeft - cardSpacingPx / 2;
       cardsContainer.style.transform = `translateX(-${xOffset}px)`;
    }
 

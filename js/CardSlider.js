@@ -11,37 +11,6 @@ class CardSlider {
       /*
          options: numVisibleCards, parentSelector, cardsDataUrl
       */
-      this.numVisibleCards =
-         options.numVisibleCards || defaultOptions.numVisibleCards;
-      this.parentSelector =
-         options.parentSelector || defaultOptions.parentSelector;
-      this.cardsDataUrl = options.cardsDataUrl || defaultOptions.cardsDataUrl;
-
-      this.numTotalCards = 20;
-
-      // create the slider
-      const slider = generateCardSlider();
-
-      // get all of the card data from the server
-      const cardsData = CardHelper.fetchCardsData(
-         this.numTotalCards,
-         1,
-         this.cardsDataUrl
-      );
-
-      // create the cards from the card data
-      const cardElements = [];
-      for (let cardData of cardsData) {
-         const cardElement = CardHelper.generateCardElement(cardData);
-         cardElements.push(cardElement);
-      }
-
-      // append the cards to the slider
-      const cardContainer = slider.querySelector(".cards");
-      for (let cardElement of cardElements) {
-         cardContainer.appendChild(cardElement);
-      }
-
       // add action listeners to the navigation
       // bonus: modify the dimensions as needed
    }

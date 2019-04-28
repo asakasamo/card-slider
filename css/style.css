@@ -5,8 +5,9 @@
 :root {
    --card-width: 308px;
    --cards-wrapper-width: calc(
-      var(--num-visible-cards) * var(--card-width) +
-         (var(--num-visible-cards) - 1) * var(--card-spacing)
+      (var(--num-visible-cards) * var(--card-width)) +
+         (var(--num-visible-cards) * var(--card-spacing)) -
+         (var(--card-spacing) / 2)
    );
    --card-spacing: 26px;
    --num-visible-cards: 3;
@@ -34,7 +35,7 @@ a {
 
 .card-slider {
    /* background-color: gray; */
-   padding: 13px;
+   padding: calc(var(--card-spacing) / 2);
    overflow: hidden;
    width: var(--cards-wrapper-width);
 }
@@ -141,10 +142,9 @@ a {
 /* Navigation (slider toggles) */
 
 .card-nav-container {
+   padding: calc(var(--card-spacing) / 2);
    display: flex;
    justify-content: center;
-   padding: var(--card-spacing) 0 0 0;
-   /* width: var(--cards-wrapper-width); */
 }
 
 .card-nav {
