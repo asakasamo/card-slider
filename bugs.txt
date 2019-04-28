@@ -6,4 +6,5 @@ Sometimes the very first click of the nav slides the cards SLIGHTLY too far left
 
 The navigation arrows aren't the right font. (Maybe they should be images...)
 
-This isn't mobile-ready.
+This isn't responsive - it's optimized for desktop.
+
