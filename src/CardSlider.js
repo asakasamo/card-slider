@@ -241,6 +241,8 @@ class CardSlider {
       this.sliderIndex--;
       if (this.sliderIndex < 0) {
          this.sliderIndex = this.numTotalCards - this.numVisibleCards;
+         this.cardsElement.classList.add("slow-transition");
+         console.log("?");
       }
       this._updateSliderPosition();
    }
@@ -259,6 +261,7 @@ class CardSlider {
       this.sliderIndex++;
       if (this.sliderIndex > this.numTotalCards - this.numVisibleCards) {
          this.sliderIndex = 0;
+         this.cardsElement.classList.add("slow-transition");
       }
       this._updateSliderPosition();
    }
@@ -274,6 +277,7 @@ class CardSlider {
       this.cardsElement.style.transform = `translateX(-${xOffset}px)`;
       this.cardsElement.addEventListener("transitionend", () => {
          this.ready = true;
+         this.cardsElement.classList.remove("slow-transition");
       });
    }
 

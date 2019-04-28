@@ -59,6 +59,10 @@ a {
    transition: 0.4s ease-out;
 }
 
+.slow-transition {
+   transition: calc(0.1s * var(--num-total-cards)) ease-out;
+}
+
 /* Individual card styles (top level) */
 
 .card {
