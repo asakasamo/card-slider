@@ -102,7 +102,7 @@ test("Should create a properly nested DOM element for a given set of card data",
       return urlString.substring(4, urlString.length - 1);
    }
 
-   const cardElement = CardHelper.generateCardElement(cardData);
+   const cardElement = CardHelper.createCardElement(cardData);
    const cardElementContent = {
       title: cardElement.querySelector(".card-title").textContent,
       subtitle: cardElement.querySelector(".card-subtitle").textContent,

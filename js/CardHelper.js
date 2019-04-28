@@ -52,7 +52,7 @@ class CardHelper {
     * @param {object} cardData
     * @returns {Element}
     */
-   static generateCardElement(cardData = {}) {
+   static createCardElement(cardData = {}) {
       // Create the DOM elements
 
       const card = document.createElement("div");

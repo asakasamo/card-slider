@@ -5,8 +5,13 @@
 
 */
 
-import CardHelper from "./CardHelper.js";
-import CardSlider from "./CardSlider.js";
+// import CardHelper from "./CardHelper.js";
+// import CardSlider from "./CardSlider.js";
+import { CardSlider } from "./slider.js";
+
+const slider = new CardSlider();
+const slider2 = new CardSlider();
+
 /*
 const cardData = {
    title: "Is this the Real Life?",
@@ -27,6 +32,7 @@ const slider = CardSlider.generateCardSlider();
 document.querySelector("#slider").appendChild(slider);
 */
 
+/*
 const numVisibleCards = 4;
 const parentSelector = "#slider";
 let numTotalCards = 20;
@@ -59,7 +65,7 @@ CardHelper.fetchCardsData(numTotalCards, 1, cardsDataUrl).then((cardsData) => {
    cardsContainer = slider.querySelector(".cards");
 
    for (let cardData of cardsData) {
-      const cardElement = CardHelper.generateCardElement(cardData);
+      const cardElement = CardHelper.createCardElement(cardData);
       cardElements.push(cardElement);
    }
 
@@ -96,3 +102,4 @@ CardHelper.fetchCardsData(numTotalCards, 1, cardsDataUrl).then((cardsData) => {
    const parentElement = document.querySelector(parentSelector);
    parentElement.appendChild(slider);
 });
+*/
