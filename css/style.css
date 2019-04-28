@@ -135,8 +135,8 @@ a {
 .card-nav-container {
    display: flex;
    justify-content: center;
-   padding: 0 var(--card-spacing);
-   width: var(--cards-wrapper-width);
+   padding: var(--card-spacing) 0;
+   /* width: var(--cards-wrapper-width); */
 }
 
 .card-nav {
