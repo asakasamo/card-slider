@@ -191,7 +191,7 @@ class CardSlider {
 
       this.sliderIndex--;
       if (this.sliderIndex < 0) {
-         this.sliderIndex = this.numTotalCards - this.numVisibleCards + 1;
+         this.sliderIndex = this.numTotalCards - this.numVisibleCards;
       }
       this._updateSliderPosition();
    }
@@ -208,7 +208,7 @@ class CardSlider {
       this.ready = false;
 
       this.sliderIndex++;
-      if (this.sliderIndex > this.numTotalCards - this.numVisibleCards + 1) {
+      if (this.sliderIndex > this.numTotalCards - this.numVisibleCards) {
          this.sliderIndex = 0;
       }
       this._updateSliderPosition();

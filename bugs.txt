@@ -3,5 +3,3 @@ The width of the cards holder calculates to a value SLIGHTLY too small for the v
 
 Sometimes the very first click of the nav slides the cards SLIGHTLY too far left. I still have 
    no idea why it's doing that.
-
-The configurable options broke!.. Doesn't properly display the number of visible cards specified.

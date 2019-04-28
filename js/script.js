@@ -6,5 +6,12 @@
 
 import { CardSlider } from "./CardSlider.js";
 
-const slider = new CardSlider();
-const slider2 = new CardSlider();
+// create a CardSlider with default options
+// const slider = new CardSlider();
+
+// create a CardSlider with provided options
+const options = {
+   numVisibleCards: 2,
+   parentSelector: "#slider"
+};
+const slider2 = new CardSlider(options);

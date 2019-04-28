@@ -3,18 +3,6 @@
 /* Variables */
 
 :root {
-   --card-width: 308px;
-   --cards-wrapper-width: calc(
-      (var(--num-visible-cards) * var(--card-width)) +
-         (var(--num-visible-cards) * var(--card-spacing)) -
-         (var(--card-spacing) / 2)
-   );
-   --card-spacing: 26px;
-   --num-visible-cards: 3;
-   --num-total-cards: 3;
-   --grid-height: 19px;
-   --avatar-width: 50px;
-   --avatar-height: var(--avatar-width);
 }
 
 /* Global styles */
@@ -34,6 +22,19 @@ a {
 /* Top level cards wrapper */
 
 .card-slider {
+   --card-width: 308px;
+   --cards-wrapper-width: calc(
+      (var(--num-visible-cards) * var(--card-width)) +
+         (var(--num-visible-cards) * var(--card-spacing)) -
+         (var(--card-spacing) / 2)
+   );
+   --card-spacing: 26px;
+   --num-visible-cards: 3;
+   --num-total-cards: 3;
+   --grid-height: 19px;
+   --avatar-width: 50px;
+   --avatar-height: var(--avatar-width);
+
    padding: calc(var(--card-spacing) / 2);
    overflow: hidden;
    width: var(--cards-wrapper-width);
