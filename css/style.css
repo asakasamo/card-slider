@@ -32,9 +32,9 @@ a {
 
 /* Top level cards wrapper */
 
-.cards-wrapper {
+.card-slider {
    /* background-color: gray; */
-   padding: var(--card-spacing);
+   padding: 13px;
    overflow: hidden;
    width: var(--cards-wrapper-width);
 }
@@ -48,7 +48,8 @@ a {
          ((var(--num-total-cards) - 1) * var(--card-spacing))
    );
    display: flex;
-   justify-content: space-between;
+   /* justify-content: space-between; */
+   transition: 0.4s ease-in-out;
 
    /* transform: translateX(-100px); */
 }
@@ -57,12 +58,12 @@ a {
 
 .card {
    /* background-color: dodgerblue; */
-   background-color: #fff;
+   margin: calc(var(--card-spacing) / 2);
    flex-basis: var(--card-width);
    display: flex;
    flex-direction: column;
    font-family: Arial;
-   border: 2px solid #f3f3f3;
+   outline: 2px solid #f3f3f3;
    border-radius: 2px;
 }
 
@@ -75,7 +76,11 @@ a {
 }
 
 .card-contents {
+   background-color: #fff;
    padding: 0 var(--grid-height) var(--grid-height) var(--grid-height);
+   flex: 1;
+   display: flex;
+   flex-direction: column;
 }
 
 /* Individual card styles (inner content) */
@@ -123,11 +128,14 @@ a {
    font-size: 16px;
    color: #2da936;
    font-weight: bold;
+   flex: 1;
+   display: flex;
 }
 
 .card-footer a,
 .card-footer a:visited {
    color: inherit;
+   align-self: flex-end;
 }
 
 /* Navigation (slider toggles) */
@@ -135,7 +143,7 @@ a {
 .card-nav-container {
    display: flex;
    justify-content: center;
-   padding: var(--card-spacing) 0;
+   padding: var(--card-spacing) 0 0 0;
    /* width: var(--cards-wrapper-width); */
 }
 
